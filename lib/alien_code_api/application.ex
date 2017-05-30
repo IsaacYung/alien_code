@@ -11,7 +11,7 @@ defmodule AlienCodeApi.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Starts a worker by calling: AlienCodeApi.Worker.start_link(arg1, arg2, arg3)
-      # worker(AlienCodeApi.Worker, [arg1, arg2, arg3]),
+      worker(AlienCodeApi.Router, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
