@@ -33,7 +33,8 @@ defmodule AlienCode.Mixfile do
       {:cowboy, "~> 1.1"},
       {:poison, "~> 3.1"},
       {:plug, "~> 1.3"},
-      {:ecto, "~> 2.1"}
+      {:ecto, "~> 2.1"},
+      {:credo, "~> 0.3", only: [:dev, :test]}
     ]
   end
 end
