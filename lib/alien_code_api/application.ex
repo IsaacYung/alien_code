@@ -1,4 +1,4 @@
-defmodule AlienCodeApi.Application do
+defmodule AlienCode.Application do
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -10,13 +10,13 @@ defmodule AlienCodeApi.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-      # Starts a worker by calling: AlienCodeApi.Worker.start_link(arg1, arg2, arg3)
-      worker(AlienCodeApi.Router, []),
+      # Starts a worker by calling: AlienCode.Worker.start_link(arg1, arg2, arg3)
+      worker(AlienCode.Router, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: AlienCodeApi.Supervisor]
+    opts = [strategy: :one_for_one, name: AlienCode.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

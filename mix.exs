@@ -1,8 +1,8 @@
-defmodule AlienCodeApi.Mixfile do
+defmodule AlienCode.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :alien_code_api,
+    [app: :alien_code,
      version: "0.1.0",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
@@ -16,7 +16,7 @@ defmodule AlienCodeApi.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger, :plug, :poison, :ecto, :cowboy],
-     mod: {AlienCodeApi.Application, []}]
+     mod: {AlienCode.Application, []}]
   end
 
   # Dependencies can be Hex packages:

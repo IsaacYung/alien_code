@@ -1,6 +1,6 @@
-defmodule AlienCodeApi do
+defmodule AlienCode do
   @moduledoc """
-  Documentation for AlienCodeApi.
+  Documentation for AlienCode.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule AlienCodeApi do
 
   ## Examples
 
-      iex> AlienCodeApi.hello
+      iex> AlienCode.hello
       :world
 
   """

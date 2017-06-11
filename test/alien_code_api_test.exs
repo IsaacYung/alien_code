@@ -1,6 +1,6 @@
-defmodule AlienCodeApiTest do
+defmodule AlienCodeTest do
   use ExUnit.Case
-  doctest AlienCodeApi
+  doctest AlienCode
 
   test "the truth" do
     assert 1 + 1 == 2

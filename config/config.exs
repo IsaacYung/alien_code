@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :alien_code_api, key: :value
+#     config :alien_code, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:alien_code_api, :key)
+#     Application.get_env(:alien_code, :key)
 #
 # Or configure a 3rd-party app:
 #
