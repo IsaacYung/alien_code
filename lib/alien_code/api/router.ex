@@ -1,8 +1,8 @@
-defmodule AlienCode.Router do
+defmodule AlienCode.API.Router do
   use Plug.Router
 
   import Logger
-  import AlienCode.Connection
+  import AlienCode.API.Connection
 
 
   plug Plug.Logger
@@ -11,7 +11,7 @@ defmodule AlienCode.Router do
   plug :hello
 
   def start_link do
-    Plug.Adapters.Cowboy.http(AlienCode.Router, [])
+    Plug.Adapters.Cowboy.http(AlienCode.API.Router, [])
   end
 
   get "/" do

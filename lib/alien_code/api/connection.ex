@@ -1,4 +1,4 @@
-defmodule AlienCode.Connection do
+defmodule AlienCode.API.Connection do
   use Plug.Builder
   import Plug.Conn
 
