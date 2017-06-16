@@ -5,7 +5,7 @@ defmodule AlienCode.API.Connection do
 
   use Plug.Builder
   import Plug.Conn
-  
+
   def hello(conn, options) do
     conn
     |> put_resp_content_type("application/json")

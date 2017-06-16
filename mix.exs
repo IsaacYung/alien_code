@@ -15,8 +15,8 @@ defmodule AlienCode.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger, :plug, :poison, :ecto, :cowboy],
-     mod: {AlienCode.API.Application, []}]
+    [applications: [:logger, :plug, :poison, :ecto, :cowboy],
+     mod: {AlienCode, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -34,6 +34,7 @@ defmodule AlienCode.Mixfile do
       {:poison, "~> 3.1"},
       {:plug, "~> 1.3"},
       {:ecto, "~> 2.1"},
+      {:postgrex, "~> 0.13.3"},
       {:credo, "~> 0.3", only: [:dev, :test]}
     ]
   end

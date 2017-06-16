@@ -3,16 +3,17 @@ defmodule AlienCode do
   Documentation for AlienCode.
   """
 
-  @doc """
-  Hello world.
+  use Application
 
-  ## Examples
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
 
-      iex> AlienCode.hello
-      :world
+    children = [
+      supervisor(AlienCode.API.Router, []),
+      supervisor(AlienCode.Repo, [])
+    ]
 
-  """
-  def hello do
-    :world
+    opts = [strategy: :one_for_one, name: AlienCode.Supervisor]
+    Supervisor.start_link(children, opts)
   end
 end
