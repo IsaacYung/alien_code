@@ -7,7 +7,7 @@ defmodule AlienCode.Repo.Migrations.CreatePost do
       add :categories_id, references(:categories)
       add :parent,  :integer
       add :title,   :text
-      add :content, :longtext
+      add :content, :text
       add :excerpt, :text
       add :status,  :string, size: 20
       add :name,    :string
