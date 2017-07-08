@@ -3,8 +3,8 @@ defmodule AlienCode.Repo.Migrations.CreatePost do
 
   def change do
     create table(:posts) do
-      add :authors_id, references(:authors)
-      add :categories_id, references(:categories)
+      add :author_id, references(:authors)
+      add :category_id, references(:categories)
       add :parent,  :integer
       add :title,   :text
       add :content, :text

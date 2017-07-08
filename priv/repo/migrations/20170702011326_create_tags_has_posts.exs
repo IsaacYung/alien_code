@@ -3,9 +3,9 @@ defmodule AlienCode.Repo.Migrations.CreateTagsHasPosts do
 
   def change do
     create table(:tags_has_posts) do
-      add :tags_id,  references(:tags)
-      add :posts_id, references(:posts)
-      add :posts_authors_id, references(:authors)
+      add :tag_id,  references(:tags)
+      add :post_id, references(:posts)
+      add :post_author_id, references(:authors)
 
       timestamps()
     end

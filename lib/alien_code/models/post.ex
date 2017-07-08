@@ -1,5 +1,6 @@
 defmodule AlienCode.Post do
   use Ecto.Schema
+  import Ecto.Changeset
 
   schema "posts" do
     field :parent,  :integer
@@ -16,5 +17,15 @@ defmodule AlienCode.Post do
     many_to_many :tags, AlienCode.Tag, join_through: "tags_has_posts"
 
     timestamps()
+  end
+
+  @required_fields ~w(title content status name type)
+  @optional_fields ~w(parent excerpt)
+
+  def changeset(post, params \\ :empty) do
+    post
+    |> cast(params, @required_fields, @optional_fields)
+    |> validate_length(:name, min: 3)
+    |> validate_length(:content, min: 10)
   end
 end

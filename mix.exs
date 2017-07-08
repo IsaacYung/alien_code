@@ -35,7 +35,8 @@ defmodule AlienCode.Mixfile do
       {:plug, "~> 1.3"},
       {:ecto, "~> 2.1"},
       {:postgrex, "~> 0.13.3"},
-      {:credo, "~> 0.3", only: [:dev, :test]}
+      {:credo, "~> 0.3", only: [:dev, :test]},
+      {:comeonin, "~> 3.2"}
     ]
   end
 end
