@@ -2,12 +2,16 @@ defmodule AlienCode.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :alien_code,
-     version: "0.1.0",
-     elixir: "~> 1.4",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps()]
+    [
+      app: :alien_code,
+      version: "0.1.0",
+      elixir: "~> 1.4",
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test]
+    ]
   end
 
   # Configuration for the OTP application
@@ -35,8 +39,9 @@ defmodule AlienCode.Mixfile do
       {:plug, "~> 1.3"},
       {:ecto, "~> 2.1"},
       {:postgrex, "~> 0.13.3"},
+      {:comeonin, "~> 3.2"},
       {:credo, "~> 0.3", only: [:dev, :test]},
-      {:comeonin, "~> 3.2"}
+      {:excoveralls, "~> 0.7.1", only: [:test, :dev]}
     ]
   end
 end

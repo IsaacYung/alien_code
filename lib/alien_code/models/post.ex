@@ -1,6 +1,7 @@
-defmodule AlienCode.Post do
+defmodule AlienCode.Models.Post do
   use Ecto.Schema
   import Ecto.Changeset
+  @moduledoc false
 
   schema "posts" do
     field :parent,  :integer
@@ -11,20 +12,38 @@ defmodule AlienCode.Post do
     field :name,    :string
     field :type,    :string
 
-    belongs_to :authors, AlienCode.Author
-    belongs_to :categories, AlienCode.Category
+    belongs_to :author, AlienCode.Models.Author
+    belongs_to :category, AlienCode.Models.Category
 
-    many_to_many :tags, AlienCode.Tag, join_through: "tags_has_posts"
+    many_to_many :tags, AlienCode.Models.Tag, join_through: "tags_has_posts"
 
     timestamps()
   end
 
-  @required_fields ~w(title content status name type)
-  @optional_fields ~w(parent excerpt)
+  @fields ~w(title content status name type parent excerpt)
+  @requered_fields ~w(title content status name type)a
 
+  @doc """
+  Changeset for Post Model
+
+  Validate the length of the name and content
+
+  ### Exemples
+
+       iex> alias AlienCode.Models.Post
+       AlienCode.Models.Post
+
+       iex> Post.changeset(%Post{}, %{title: "Elixir, vale a pena?", content: "Elixir vale a pena usar ...", name: "elixir-vale-a-pena", excerpt: "Elixir vale a ...", type: "POST"})
+       #Ecto.Changeset<action: nil,
+        changes: %{content: "Elixir vale a pena usar ...",
+          excerpt: "Elixir vale a ...", name: "elixir-vale-a-pena",
+          title: "Elixir, vale a pena?", type: "POST"}, errors: [],
+        data: #AlienCode.Post<>, valid?: true>
+  """
   def changeset(post, params \\ :empty) do
     post
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @fields)
+    |> validate_required(@requered_fields)
     |> validate_length(:name, min: 3)
     |> validate_length(:content, min: 10)
   end
