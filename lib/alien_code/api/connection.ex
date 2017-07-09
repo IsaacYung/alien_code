@@ -3,12 +3,12 @@ defmodule AlienCode.API.Connection do
   Plug collection for handle requests
   """
 
+
   use Plug.Builder
   import Plug.Conn
 
-  def hello(conn, options) do
+  def atomize(conn, options) do
+    IO.inspect conn.body_params
     conn
-    |> put_resp_content_type("application/json")
-    |> send_resp(201, "{\"Hello\": \"World GO\"}")
   end
 end

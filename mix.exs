@@ -14,7 +14,7 @@ defmodule AlienCode.Mixfile do
 
       # Docs
       name: "AlienCode",
-      source_url: "https://github.com/IsaacYung/alien_code_api",
+      source_url: "https://github.com/IsaacYung/alien_code",
       homepage_url: "http://www.alien-code.com",
       docs: [
         main: "AlienCode-API", # The main page in the docs
