@@ -1,7 +1,9 @@
 defmodule AlienCode.Models.Post do
   use Ecto.Schema
   import Ecto.Changeset
-  @moduledoc false
+  @moduledoc """
+  Post Model
+  """
 
   schema "posts" do
     field :parent,  :integer
@@ -30,15 +32,15 @@ defmodule AlienCode.Models.Post do
 
   ### Exemples
 
-       iex> alias AlienCode.Models.Post
-       AlienCode.Models.Post
+      iex> alias AlienCode.Models.Post
+      AlienCode.Models.Post
 
-       iex> Post.changeset(%Post{}, %{title: "Elixir, vale a pena?", content: "Elixir vale a pena usar ...", name: "elixir-vale-a-pena", excerpt: "Elixir vale a ...", type: "POST"})
-       #Ecto.Changeset<action: nil,
-        changes: %{content: "Elixir vale a pena usar ...",
-          excerpt: "Elixir vale a ...", name: "elixir-vale-a-pena",
-          title: "Elixir, vale a pena?", type: "POST"}, errors: [],
-        data: #AlienCode.Post<>, valid?: true>
+      iex> Post.changeset(%Post{}, %{title: "Elixir, vale a pena?", content: "Elixir vale a pena usar ...", name: "elixir-vale-a-pena", excerpt: "Elixir vale a ...", type: "POST"})
+      #Ecto.Changeset<action: nil,
+       changes: %{content: "Elixir vale a pena usar ...",
+         excerpt: "Elixir vale a ...", name: "elixir-vale-a-pena",
+         title: "Elixir, vale a pena?", type: "POST"}, errors: [],
+       data: #AlienCode.Post<>, valid?: true>
   """
   def changeset(post, params \\ :empty) do
     post

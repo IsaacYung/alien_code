@@ -2,7 +2,9 @@ defmodule AlienCode.Models.Author do
   use Ecto.Schema
   import Ecto.Changeset
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
-  @moduledoc false
+  @moduledoc """
+  Author Model
+  """
 
   schema "authors" do
     field :login,    :string, unique: true
@@ -28,16 +30,16 @@ defmodule AlienCode.Models.Author do
 
   ### Exemples
 
-       iex> alias AlienCode.Models.Author
-       AlienCode.Models.Author
+      iex> alias AlienCode.Models.Author
+      AlienCode.Models.Author
 
-       iex> Author.changeset(%Author{}, %{login: "isaaclog", email: "isaaczoi@gmail.com", pass_unencrypted: "12345678A", display_name: "Isaac Y", nicename: "isaac-yung"})
-       #Ecto.Changeset<action: nil,
-        changes: %{display_name: "Isaac Y", email: "isaaczoi@gmail.com",
-          login: "isaaclog", nicename: "isaac-yung",
-          pass: "$2b$12$ZhEuGsMjW7CQgSKL8qHqP.GmpTqAyFWBvxeifAKSnpZQTgNxVM5G.",
-          pass_unencrypted: "12345678A"}, errors: [], data: #AlienCode.Author<>,
-        valid?: true>
+      iex> Author.changeset(%Author{}, %{login: "isaaclog", email: "isaaczoi@gmail.com", pass_unencrypted: "12345678A", display_name: "Isaac Y", nicename: "isaac-yung"})
+      #Ecto.Changeset<action: nil,
+      changes: %{display_name: "Isaac Y", email: "isaaczoi@gmail.com",
+        login: "isaaclog", nicename: "isaac-yung",
+        pass: "$2b$12$ZhEuGsMjW7CQgSKL8qHqP.GmpTqAyFWBvxeifAKSnpZQTgNxVM5G.",
+        pass_unencrypted: "12345678A"}, errors: [], data: #AlienCode.Author<>,
+      valid?: true>
   """
   def changeset(login, params \\ :empty) do
     login

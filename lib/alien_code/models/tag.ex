@@ -1,7 +1,9 @@
 defmodule AlienCode.Models.Tag do
   use Ecto.Schema
   import Ecto.Changeset
-  @moduledoc false
+  @moduledoc """
+  Tag Model
+  """
 
   schema "tags" do
     field :name,     :string
@@ -22,13 +24,13 @@ defmodule AlienCode.Models.Tag do
 
   ### Exemples
 
-       iex> alias AlienCode.Models.Tag
-       AlienCode.Models.Tag
+      iex> alias AlienCode.Models.Tag
+      AlienCode.Models.Tag
 
-       iex> Tag.changeset(%Tag{}, %{name: "programacao", nicename: "Programaçâo"})
-       #Ecto.Changeset<action: nil,
-         changes: %{name: "programacao", nicename: "Programaçâo"}, errors: [],
-         data: #AlienCode.Tag<>, valid?: true>
+      iex> Tag.changeset(%Tag{}, %{name: "programacao", nicename: "Programaçâo"})
+      #Ecto.Changeset<action: nil,
+       changes: %{name: "programacao", nicename: "Programaçâo"}, errors: [],
+      data: #AlienCode.Tag<>, valid?: true>
 
   """
   def changeset(post, params \\ :empty) do

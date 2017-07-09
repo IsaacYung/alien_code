@@ -1,7 +1,9 @@
 defmodule AlienCode.Models.Category do
   use Ecto.Schema
   import Ecto.Changeset
-  @moduledoc false
+  @moduledoc """
+  Category Model
+  """
 
   schema "categories" do
     field :name,        :string
@@ -23,14 +25,14 @@ defmodule AlienCode.Models.Category do
 
   ### Exemples
 
-       iex> alias AlienCode.Models.Category
-       AlienCode.Models.Category
+      iex> alias AlienCode.Models.Category
+      AlienCode.Models.Category
 
-       iex> Category.changeset(%Category{}, %{name: "linguagens", nicename: "Linguagens", description: "Linguagens de programação modernas"})
-       #Ecto.Changeset<action: nil,
-        changes: %{description: "Linguagens de programação modernas",
-         name: "linguagens", nicename: "Linguagens"}, errors: [],
-        data: #AlienCode.Category<>, valid?: true>
+      iex> Category.changeset(%Category{}, %{name: "linguagens", nicename: "Linguagens", description: "Linguagens de programação modernas"})
+      #Ecto.Changeset<action: nil,
+       changes: %{description: "Linguagens de programação modernas",
+       name: "linguagens", nicename: "Linguagens"}, errors: [],
+      data: #AlienCode.Category<>, valid?: true>
 
   """
   def changeset(category, params \\ :empty) do

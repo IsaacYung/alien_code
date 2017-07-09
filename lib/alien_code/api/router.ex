@@ -1,5 +1,7 @@
 defmodule AlienCode.API.Router do
-  @moduledoc false
+  @moduledoc """
+  Router for API controllers
+  """
 
   alias AlienCode.API.Connection
   alias AlienCode.API.Router
